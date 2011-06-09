@@ -6,4 +6,4 @@
     #import <Cocoa/Cocoa.h>
 #endif
 
-#define CHROMIUM_URL @"http://build.chromium.org/buildbot/snapshots/chromium-rel-mac/"
+#define CHROMIUM_URL @"http://build.chromium.org/f/chromium/snapshots/Mac/"
