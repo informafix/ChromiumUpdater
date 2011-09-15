@@ -90,7 +90,7 @@
 
 - (NSString*) detectRemoteChromium {
   NSError *error;
-  NSURL* latestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/LATEST", CHROMIUM_URL]];
+  NSURL* latestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@LAST_CHANGE", CHROMIUM_URL]];
   NSString *version = [NSString stringWithContentsOfURL:latestURL
                                                encoding:NSASCIIStringEncoding
                                                   error:&error];
@@ -114,7 +114,13 @@
   [lblRemoteVersion setStringValue:remoteChromium ? remoteChromium : @"Unable to detect!"];
 
   if (localChromium && remoteChromium) {
-    NSComparisonResult res = [localChromium compare:remoteChromium];
+    NSNumberFormatter * formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber * localChromiumNum = [formatter numberFromString:localChromium];
+    NSNumber * remoteChromiumNum = [formatter numberFromString:remoteChromium];
+    [formatter release];
+
+    NSComparisonResult res = [localChromiumNum compare:remoteChromiumNum];
     switch (res) {
       case NSOrderedSame:
         [lblInfo setStringValue:@"Your Chromium version is up to date!"];
