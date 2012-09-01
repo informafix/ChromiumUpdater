@@ -12,7 +12,7 @@
 
 @class AppController;
 
-@interface Downloader : NSObject {
+@interface Downloader : NSObject<NSURLDownloadDelegate> {
   AppController* controller;
 
   long long bytesReceived;

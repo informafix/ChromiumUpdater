@@ -41,7 +41,7 @@
   for (NSUInteger rev = revisionStart; rev <= revisionEnd; ++rev) {
     NSNumber* number = [NSNumber numberWithInteger:rev];
     if (![revisions containsObject:number]) {
-      NSString *xmlStr = [NSString stringWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%u/changelog.xml", CHROMIUM_URL, rev]] encoding:NSASCIIStringEncoding error:&error];
+      NSString *xmlStr = [NSString stringWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%lu/changelog.xml", CHROMIUM_URL, (unsigned long)rev]] encoding:NSASCIIStringEncoding error:&error];
       NSXMLDocument* doc = [[NSXMLDocument alloc] initWithXMLString:xmlStr options:NSXMLDocumentTidyXML error:&error];
       NSArray* logEntries = [doc objectsForXQuery:@"//changelogs/log/logentry" error:&error];
       for (NSXMLElement* entry in logEntries) {
