@@ -14,10 +14,7 @@
 
 @class Downloader;
 
-@interface AppController : NSObject
-#ifdef MAC_OS_X_VERSION_10_6
-<NSApplicationDelegate>
-#endif
+@interface AppController : NSObject<NSApplicationDelegate>
 {
   IBOutlet NSWindow* window;
 

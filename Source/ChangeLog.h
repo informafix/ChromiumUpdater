@@ -11,10 +11,7 @@
 #import "Change.h"
 #import "ChangeCell.h"
 
-@interface ChangeLog : NSObject
-#ifdef MAC_OS_X_VERSION_10_6
-<NSTableViewDataSource, NSTableViewDelegate>
-#endif
+@interface ChangeLog : NSObject<NSTableViewDataSource, NSTableViewDelegate>
 {
   NSMutableArray* changes;
   NSMutableSet* revisions;
