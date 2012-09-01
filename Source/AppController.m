@@ -83,7 +83,7 @@
   NSString *version = nil;
   if (path) {
     NSString *infoPList = [NSString stringWithFormat:@"%@/Contents/Info.plist", path];
-    version = [[NSDictionary dictionaryWithContentsOfFile:infoPList] valueForKey:@"SVNRevision"];
+    version = [[NSDictionary dictionaryWithContentsOfFile:infoPList] valueForKey:@"SCMRevision"];
   }
   return version;
 }
