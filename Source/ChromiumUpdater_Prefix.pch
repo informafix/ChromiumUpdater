@@ -6,4 +6,4 @@
     #import <Cocoa/Cocoa.h>
 #endif
 
-#define CHROMIUM_URL @"http://commondatastorage.googleapis.com/chromium-browser-snapshots/Mac/"
+#define CHROMIUM_URL @"http://commondatastorage.googleapis.com/chromium-browser-continuous/Mac/"
