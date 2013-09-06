@@ -1,4 +1,5 @@
-** Chromium Updater OSX
+Chromium Updater OSX
+=============
 
 An updater for the OSX version of Chromium (with changelog display).
 
